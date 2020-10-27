@@ -1,0 +1,243 @@
+      * {box-sizing: border-box; margin:0; padding: 0; min-height: 30px; font-family: arial;}
+
+      main, header, article, section, aside, footer, div, input{display: block;}
+      input[type=number]{
+          width: 100%;
+          padding: 8px;
+          margin: 5px 0;
+          display: block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+
+      input[type=submit]:hover {
+          background-color: cyan;
+        }
+
+      main {
+        width: 90%;
+        margin: 0px auto;
+        background: white;
+      }
+
+      header{
+        width: 100%;
+        background: rgb(57, 59, 60);
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        padding: 5px;
+        }
+
+      header div{
+        border: 3px solid yellow;
+        width: 40%;
+        display: flex;
+        padding: 20px;
+      }
+
+
+      nav{
+        width: 100%;
+        font-size: 30px;
+        font-weight: bold;
+        background: #F4F6F8;
+      }
+
+
+      nav img{
+        padding-right: 10px;
+      }
+      
+
+      header div form {
+        width: 100%;
+      }
+
+a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+  color:black;
+}
+      article {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+
+      label{color: black;}
+
+      .menu{
+        width: 20%;
+        background: #F4F6F8;
+        padding: 15px;
+        margin-right: 30px;
+        font-size: 18px;
+
+      }
+
+      .menu_item {
+        width: 100%;
+        background: white;
+        border-left: 5px solid white; 
+        padding: 10px;
+
+      }
+
+      .menu_ativo {
+        border-style: solid;
+        border-left: 5px solid #4C9A32;
+        padding: 10px;
+        border-color: #F4F6F8 #F4F6F8 #F4F6F8 #4C9A32;
+        background: white;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+        margin: 2px;
+        font-style: italic;
+        text-decoration: underline;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .formulario {
+        border: 1px solid black;
+        padding: 15px;
+        margin-right: 30px;
+      }
+
+      .campo_calculo{
+        background: rgb(210, 211, 213);
+        width: 100%;
+        display: flex;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+      }
+
+      .calculo {
+        display: flex;
+        flex-wrap: nowrap;
+        color: white;
+        padding: 10px 10px;
+          margin: 4px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 25px;
+          border-radius: 6px;
+      }
+
+      .receita {
+        background: rgb(92, 198, 208);
+      }
+
+      .despesas {
+        background: rgb(240, 86, 87);
+      }
+
+      .total {
+        background: rgb(0, 168, 89);
+      }
+
+      article section div ol {
+        display: block;
+        list-style-type: decimal;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 20px;
+        font-size: 0.7em;
+        text-align: justify;
+      }
+
+      article section div h3 {
+        color: black;
+      }
+
+      article section div span {
+          position: relative;
+          left: 0;
+          top: 40%;
+        width: 100%;
+          text-align: center;
+          font-size: 18px;
+      }
+
+      footer{
+        width: 100%;
+        text-align: center; 
+        font-family: arial; 
+        font-size: 12px; 
+        background: #4CAF50; 
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+      }
+
+      .sombra {
+        box-shadow: -1px 0px 10px rgba(0,0,0,0.8);
+
+      }
+
+      .button {
+          background-color: #4CAF50;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          font-size: 15px;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 0px;
+          cursor: pointer;
+
+      }
+
+      .fundo_escuro {
+        background: rgb(210, 211, 213);
+
+      }
+
+      .espacamento_abaixo {
+        margin-bottom: 20px;
+      }
+
+      .coluna {flex-direction: column;}
+      .row {flex-direction: row;}
+      .space_between{ justify-content: space-between; }
+      .campo_pequeno {width: 30%;}
+      .campo_grande {width: 60%;}
+      .campo_completo {width: 100%;}
+
+      #campo_relatorio{ display:none;}
+
+
+/*  font-size: 1.5em;*/
+
+h1 {
+  text-align: center;
+  margin: 20px 0 0 0;
+  font-size: 1.25em;
+  font-weight: normal;
+}
+
+@media (max-width: 856px) {
+  .espacamento_abaixo {margin-bottom: 5px;}
+
+  article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  article section, .menu, .campo_calculo, .calculo{
+    width: 100%;
+  }
+
+  .campo_grande {width: 100%;}
+}
+
+@media (max-width: 370px) {
+  main{width: 370px; height: auto;}
