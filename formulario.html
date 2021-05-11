@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    alert("Text: " + $("#test").text());
+  });
+  $("#btn2").click(function(){
+    alert("HTML: " + $("#test").html());
+  });
+
+$("#btn_login").click(function () {
+
+              if ($("#login").val() != $("#login2").val()) {
+
+                   alert("favor preencher os campos corretamente");
+
+                  return false;
+
+               } else {
+
+                   alert("campos preenchidos corretamente");
+
+                  return true;
+
+               }
+
+           });
+});
+</script>
+</head>
+<body>
+
+  
+
+<input type="text" name="login" id="login">
+<input type="text" name="login2" id="login2">
+<button name="login" id="btn_login">login</button>
+
+<button id="btn1">Show Text</button>
+<button id="btn2">Show HTML</button>
+
+</body>
+</html>

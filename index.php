@@ -1,296 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta http-equiv="content-type" content="text/html, charset=utf-8"  />
-		<meta http-equiv="content-language" content="pt-br, en-US, fr, en"  />
-		<meta name="author" content="El Anara Nasciment, José Carlos Nogueira Morais, Roseany Lobato de Sousa" />
-		<meta name="description" content="gerenciador pessoal e empresarial" />
-		<meta name= "keywords" content="financeiro, finanças, I-manager" />
-		<meta name="generator" content="sublime"/>
-		<meta name="robots" content="all"/>
-		<meta name="rating" content="general" />
-		<meta name="copyright" content="El Anara Nascimento, José Carlos Nogueira Morais, Roseany Lobato de Sousa" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>I - MANAGER</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="mit" content="2021-02-26T12:48:20-03:00+187023">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-
-			$("#fbotao2").mousedown(function(){
-			$login = $("#flogin").val();
-
-			if ($login == "pessoajuridica") {
-				window.location.href = "default_juridica.html";
-			} else {
-				if ($login == "pessoafisica") {
-					window.location.href = "default_pessoal.html";
-			} else {
-				alert("LOGIN INCORRETO");
-			}
-			}
-		})
-
-			function assineagora(){alert("LIGUE *9000 E ASSINE AGORA");}
-
-			$('#assine_agora').click(function(){
-			assineagora();
-			})
-
-			$('#conquisteja').click(function(){
-			assineagora();
-			})
-
-		})
-		</script>
-		<style>
-			* {box-sizing: border-box; margin:0; padding: 0; font-family: arial;}
-
-			main, header, article, section, aside, footer, div, input{display: block;} 
-			
-			main {
-				width: 1000px;
-				margin: 0px auto;
-				background: white;
-			}
-
-			header{
-				width: 100%;
-				height: 140px;
-				background: rgba(00,100,00, 0.8);
-				display: flex;
-				flex-wrap: nowrap;
-				justify-content: space-between;
-
-			}
-
-			header div{
-				width: 30%;
-				display: flex;
-				padding: 20px;
-			}
-
-			header div img {width: 100%;}
-
-			header div form {
-				width: 100%;
-			}
-
-			input[type=text]{
- 				width: 80%;
-  				padding: 8px;
- 				margin: 5px 0;
-  				display: block;
-  				border: 1px solid #ccc;
-  				border-radius: 4px;
-  				box-sizing: border-box;
-				}
-
-			input[type=submit]:hover {
-  				background-color: cyan;
-				}
-			#fbotao {
-  				width: 40%;
-  				background: silver;
-  				color: gray;
-  				text-align: center;
-  				padding: 5px;
- 				margin: 2px 0;
-  				border: none;
-  				border-radius: 2px;
-  				cursor: pointer;
-  				float: right;
-				}
-
-			nav {
-				background: #F0FFF0;
-				height: 60px;
-				}
-
-			nav div {
-				width: 50%;
-
-			}
-
-			nav span {
-				margin: 0px auto; width: 30%; color: white; font-family: arial; text-align: center; border: 1px solid black; border-radius: 5px; cursor: pointer; background: #32CD32; padding: 10px;
-			}
-
-			#selfpub{
-				width: 80%;
-				height: auto; 
-				font-family: arial; 
-				text-align: justify; 
-				border: 1px solid black; 
-				border-style: dashed; 
-				background: white; 
-				padding-top: 10px; 
-				padding-left: 10px; 
-				padding-right: 4px;
-			}
-
-			#selfpub * {padding: 2px; text-align: justify-all;}
-
-			footer{
-				text-align: center; 
-				font-family: arial; 
-				font-size: 12px; 
-				background: green; 
-				padding: 5px;
-			}
-
-			.flex {
-				display: flex;
-			}
-
-			.coluna {flex-direction: column;}
-			
-			.dir_esq {align-items: flex-end;}
-
-			.centralizar {
-				justify-content: center;
-				align-items: center;
-				align-content: center;
-				align-self: center;
-			}
-
-			.borda {border: 1px solid black;}
-
-			.div2{width: 50%;}
-
-			.espaco_abaixo{ margin-bottom: 10px; }
-			.espaco_acima{ margin-top: 10px;}
-
-			#minibanner2 {display: none;}
-
-		@media (max-width: 856px) {
-
-			main{width:100%;}
-
-			header{
-
-				display: block;
-				width: 100%;
-				height: auto;
-				margin-bottom: 10px;
-				padding: 2px;
-			}
-
-			header div{
-				width: auto;
-				height: auto;
-				padding: 2px;
-			}
-
-			#divform {
-				width: 100%;
-				display: flex;
-				justify-content: flex-end;
-
-			}
-
-			#minibanner2{
-				width: 50%;
-				display: block;
-				min-height: 76px;
-				}
+    <title>I-Manager - Você no controle</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+    <link rel="stylesheet" href="assets/css/boot.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn_login").click(function() {
+                if ($("#senha").val() != $("#senha2").val()) {
+                    alert("As senhas não coincidem!");
+                    return false;
+                } 
+            });
+        });
 
 
-			input[type=text], select {
- 				width: 80%;
-  				padding: 8px;
- 				margin: 3px;
-  				display: block;
-  				border: 1px solid #ccc;
-  				border-radius: 4px;
-  				box-sizing: border-box;
-				}
+    </script>
+</head>
+<body>
 
-			input[type=submit]:hover {
-  				background-color: cyan;
-				}
-				
-			#fbotao {
-  				width: 25%;
-  				background: silver;
-  				color: gray;
-  				text-align: center;
-  				padding: 2px ;
- 				margin: 2px;
-  				border: none;
-  				border-radius: 2px;
-  				cursor: pointer;
-  				float: right;
-				}
+<!--HEADER-->
 
-			nav, nav div, nav div span, nav p {
-				display: none;
-				visibility: hidden;
-				width: 0px;
-				height: 0px;
-				border:0px;
-				margin:0px;
-			}
+<header class="main_header gradient gradient-green d-flex">
+    <div class="container">
+        <div class="main_header_logo">
+            <a title="Home" href="./"><img src="images/logo.png" width="100px" class="align-self-center">
+        </div>
 
-			footer{
-				text-align: center; 
-				font-family: arial; 
-				font-size: 3vw; 
-				background: green; 
-				padding: 5px;
-			}
-		}
+        <nav class="main_header_nav">
+            <span class="main_header_nav_mobile j_menu_mobile_open icon-menu icon-notext radius transition"></span>
+            <div class="main_header_nav_links j_menu_mobile_tab">
+                <span class="main_header_nav_mobile_close j_menu_mobile_close icon-error icon-notext transition"></span>
+                <a class="link transition radius active" title="Home" href="./">Home</a>
+                <a class="link login transition radius icon-sign-in" title="Entrar" href="?file=auth-login">Entrar</a>
+            </div>
+        </nav>
+    </div>
+</header>
 
-		@media (max-width: 375px) {
-			main{ width: 375px; height: auto;}
-		}
+<!--CONTENT-->
+<main class="main_content">
+    <?php
+    $file = filter_input(INPUT_GET, "file", FILTER_SANITIZE_SPECIAL_CHARS);
+    if (empty($file)) {
+        require __DIR__ . "/views/home.php";
+    } elseif ($file && file_exists(__DIR__ . "/views/{$file}.php")) {
+        require __DIR__ . "/views/{$file}.php";
+    } else {
+        require __DIR__ . "/views/404.php";
+    }
+    ?>
+</main>
 
+<!--FOOTER-->
+<footer class="main_footer">
+    <div class="container content">
+        <section class="main_footer_content">
+            <article class="main_footer_content_item">
+                <h2>Sobre:</h2>
+                <p>O CafeControl é um gerenciador de contas simples, poderoso e gratuito. O prazer de tomar um café e
+                    ter o controle total de suas contas.</p>
+                <a title="Termos de uso" href="?file=terms">Termos de uso</a>
+            </article>
 
-		</style>
-		 
-	</head>
-	<body>
-		<main>
-			<header>
-				<div><img src=images/logo.png></div>
-				<div id="divform">
-					<picture id="minibanner2">
-  						<source srcset="images/minibanner2.png" media="(max-width: 855px)">
- 						<img src="images/minibanner2.png" width="100%">
-					</picture>
-					
-					<form class="flex coluna dir_esq" id="formulario_login" action="login.php" method="POST">
-    					<input type="number" id="flogin" name="cpf" placeholder="login" required>
-    					<input type="password" id="fsenha" name="senha" placeholder="senha" required>
-						<input type="submit" id="btn_login" name="btn_login" value="Entrar">
- 					</form>
- 				</div>
-			</header>
+            <article class="main_footer_content_item">
+                <h2>Mais:</h2>
+                <a class="link transition radius active" title="Home" href="./">Home</a>
+                <a class="link transition radius" title="Sobre" href="?file=about">Sobre</a>
+                <a class="link transition radius" title="Blog" href="?file=blog">Blog</a>
+                <a class="link transition radius" title="Entrar" href="?file=auth-login">Entrar</a>
+            </article>
 
-			<nav class="flex centralizar" style="color: #3CB371; font-weight: bold;">
-				<div class="flex centralizar" ><p>Faça como os grandes!</p></div>
-				<div class="flex centralizar"><span><a href="cliente_novo.php">Sign in</a></span></div>
-			</nav>
-			<article>
-				<section class="rotator">
-					<a href="cliente_novo.php"><picture>
-  						<source srcset="images/minibanner1.png" media="(max-width: 855px)">
- 						<source srcset="images/banner.png" media="(max-width: 1500px)">
-  						<img src="images/banner.png" width="100%">
-					</picture></a>
-				</section>
+            <article class="main_footer_content_item">
+                <h2>Contato:</h2>
+                <p class="icon-phone"><b>Telefone:</b><br> +55 55 5555.5555</p>
+                <p class="icon-envelope"><b>Email:</b><br> cafe@cafecontrol.com</p>
+                <p class="icon-map-marker"><b>Endereço:</b><br> Fpolis, SC/Brasil</p>
+            </article>
 
-				<section class="flex espaco_acima">
-					<div class="div2 flex"><img src="images/amostra.png" width="100%"></div>
-					<div id="selfpub"><h3>Sua empresa na palma da mão</h3><p>Onde quer que
-					esteja, consulte seu caixa, veja o que entrou ou saiu.<br> Com <strong><font
-					color="green">I-Manager</font> é <font color="yellow">você</font> no
-					<font color="green">controle</font><br><br>	
-				<p id="assine_agora"> Assine agora</p></strong></div>
-				</section>
-			</article>
-			<footer><h4>I-Manager</h4>Copyright 2022</footer>
-		</main>
-	</body>
-</html>	
+            <article class="main_footer_content_item social">
+                <h2>Social:</h2>
+                <a class="icon-facebook" href="#face" title="CafeControl no Facebook">/CafeControl</a>
+                <a class="icon-instagram" href="#insta" title="CafeControl no Instagram">@CafeControl</a>
+                <a class="icon-youtube" href="#yt" title="CafeControl no YouTube">/CafeControl</a>
+            </article>
+        </section>
+    </div>
+</footer>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/scripts.js"></script>
+
+</body>
+</html>

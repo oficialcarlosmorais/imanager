@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 10-Maio-2021 às 02:52
+-- Generation Time: 26-Abr-2021 às 17:31
 -- Versão do servidor: 5.7.21
 -- PHP Version: 7.2.4
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `imanager`
+-- Database: `projeto`
 --
 
 -- --------------------------------------------------------
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `despesas` (
   `valor` varchar(10) DEFAULT NULL,
   `data` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id_despesa`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `despesas`
@@ -72,11 +72,7 @@ INSERT INTO `despesas` (`id_despesa`, `id_cliente`, `despesa`, `valor`, `data`) 
 (20, '2', 'Internet', '99.90', '2021-04-26'),
 (19, '2', 'Telefone', '50', '2021-04-26'),
 (18, '2', 'Água', '100', '2021-04-26'),
-(17, '2', 'Luz', '300', '2021-04-26'),
-(22, '9', 'Gasolina', '330', '2021-04-21'),
-(27, '9', 'Luz', '150', '2021-05-10'),
-(26, '9', 'controle', '110', '2021-04-12'),
-(28, '9', 'Jantar', '200', '2021-05-12');
+(17, '2', 'Luz', '300', '2021-04-26');
 
 -- --------------------------------------------------------
 
@@ -92,14 +88,15 @@ CREATE TABLE IF NOT EXISTS `receitas` (
   `valor` varchar(10) DEFAULT NULL,
   `data` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id_receita`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `receitas`
 --
 
 INSERT INTO `receitas` (`id_receita`, `id_cliente`, `receita`, `valor`, `data`) VALUES
-(29, '9', 'Venda notebook', '450', '2021-06-09'),
+(1, '02', 'Salário', '1500', '20-04-26'),
+(2, '02', 'Salário', '1500', '20-04-26'),
 (4, '2', 'Venda camisa', '50', '2021-04-26'),
 (5, '2', 'Venda calça', '60', '2021-04-26'),
 (6, '2', 'Venda sutien', '39', '2021-04-26'),
@@ -108,14 +105,11 @@ INSERT INTO `receitas` (`id_receita`, `id_cliente`, `receita`, `valor`, `data`) 
 (9, '2', 'Venda sutien', '39', '2021-04-26'),
 (10, '3', 'Salário', '2000', '2021-04-26'),
 (11, '7', 'Salário', '3000', '2021-04-26'),
-(26, '9', 'Gasolina', '500', '2021-05-05'),
+(12, '5', 'Salário', '2500', '2021-04-26'),
+(13, '5', 'Venda sutien', '53', '2021-04-26'),
 (14, '2', 'venda celular', '640', '2021-04-26'),
 (15, '3', 'Venda camisa', '66', '2021-04-26'),
-(27, '9', 'Salário', '3000', '2021-05-10'),
-(28, '9', 'Salário', '3000', '2021-06-01'),
-(30, '9', 'receita 1', '100', '2021-05-01'),
-(31, '9', 'receita 02', '200', '2021-05-02'),
-(32, '9', 'receita 03', '300', '2021-05-03');
+(16, '5', 'venda calcinha', '55', '2021-04-26');
 
 -- --------------------------------------------------------
 
@@ -154,35 +148,20 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(60) NOT NULL,
-  `sobrenome` varchar(60) NOT NULL,
-  `nasc` varchar(10) NOT NULL,
-  `doc` varchar(17) NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `senha` varchar(600) NOT NULL,
-  `endereco` varchar(60) NOT NULL,
-  `bairro` varchar(30) NOT NULL,
-  `cidade` varchar(30) NOT NULL,
-  `estado` varchar(20) NOT NULL,
-  `pais` varchar(20) NOT NULL,
   `telefone` varchar(60) NOT NULL,
-  `tipo` varchar(3) NOT NULL,
-  `data_cad` varchar(10) NOT NULL,
-  `admin` int(2) NOT NULL,
+  `email` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `nasc`, `doc`, `email`, `senha`, `endereco`, `bairro`, `cidade`, `estado`, `pais`, `telefone`, `tipo`, `data_cad`, `admin`) VALUES
-(2, 'Raline', '', '0', '05189549437', 'raline@gmail.com', '1234', '', '', '', '', '', '981129099', '', '', 0),
-(3, 'Rosário', '', '0', '', 'rosário@gmail.com', '', '', '', '', '', '', '991143293', '', '', 0),
-(5, 'El Hazard', '', '0', '', 'elhazard@gmail.com', '', '', '', '', '', '', '994201401', '', '', 0),
-(7, 'Maria Eteuvina', '', '0', '', 'maria@gmail.com', '', '', '', '', '', '', '991521015', '', '', 0),
-(9, 'José Carlos', 'Nogueira Morais', '11031987', '85549703220', 'jcnogueiramorais@gmail.com', '1234', 'Av. Diógenes Silva, nº 2089', 'Buritizal', 'Macapá', 'Amapá', 'Brasil', '991705841', 'PF', '01/05/2021', 1),
-(11, 'Midas', 'Softwares', '1032019', '30511392000114', 'midas@gmail.com', '1234', 'Av. Diógenes Silva, nº 2089', 'Buritizal', 'Macapá', 'Amapá', 'Brasil', '991336464', 'PJ', '02/05/2021', 0),
-(13, 'Usuário', 'Teste', '2021-05-10', '217821', 'josecarlosmorais@hotmail.com', '', 'Av. Diógenes Silva, nº 2089', 'Buritizal', 'Macapá', 'Amapá', 'Brasil', '991705841', 'pf', '2021-05-10', 0);
+INSERT INTO `usuario` (`id`, `nome`, `telefone`, `email`) VALUES
+(2, 'Raline', '981129099', 'raline@gmail.com'),
+(3, 'Rosário', '991143293', 'rosário@gmail.com'),
+(5, 'El Hazard', '994201401', 'elhazard@gmail.com'),
+(7, 'Maria Eteuvina', '991521015', 'maria@gmail.com');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
